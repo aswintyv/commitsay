@@ -1,6 +1,6 @@
 {
   "name": "commitsay",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Pulls commits from http://www.commitlogsfromlastnight.com/ and pipes it to cowsay",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,7 @@
     "Night"
   ],
   "bin":{
-    "geeksay": "./cli"
+    "geeksay": "./cli.js"
   },
   "author": "Aswin <aswin@aswinteja.com>",
   "license": "MIT",
