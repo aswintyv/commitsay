@@ -14,7 +14,7 @@
     "Night"
   ],
   "bin":{
-    "geeksay": "./cli.js"
+    "commitsay": "./cli.js"
   },
   "author": "Aswin <aswin@aswinteja.com>",
   "license": "MIT",
@@ -23,7 +23,7 @@
     "url": "https://github.com/aswintyv/commitssay.git"
   },
   "dependencies" : {
-    "express"    : "4.14.0",
+    "cheerio"    : "0.22.0",
      "request"   : "2.78.0",
      "cowsay"    : "1.1.8",
      "nedb"     : "1.8.0",
