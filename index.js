@@ -4,6 +4,7 @@ const Datastore = require('nedb')
 const fs = require('fs');
 const os = require('os');
 const db_location = os.homedir()+'/commitsDataFile';
+const db_fetch_time = os.homedir()+'/commitsDataFileTime';
 const db = new Datastore({ filename: db_location, autoload: true });
 
 const _ = require('lodash');
@@ -13,7 +14,14 @@ const cowsay = require("cowsay");
 var geeksayModule = function() {
     this.init = () => {
         db.count({}, (err, count) => {
-            var stats = fs.statSync(db_location);
+            var stats;
+            try{
+                stats = fs.statSync(db_fetch_time);
+            }
+            catch(e){
+                fs.writeFileSync(db_fetch_time, new Date().toString());
+                stats = fs.statSync(db_fetch_time);
+            }
             var mtime = new Date(stats.mtime).getTime();
             var currtime = new Date().getTime();
             if (currtime - mtime > 12 * 60 * 60 * 1000 || count === 0) {
@@ -69,6 +77,7 @@ var geeksayModule = function() {
                     docs.push({ message: message, commiter: commiter, id: count + i });
                 });
                 db.insert(docs, (err, newDocs) => {
+                    fs.writeFileSync(db_fetch_time, new Date().toString());
                     echo_from_db();
                 });
 
