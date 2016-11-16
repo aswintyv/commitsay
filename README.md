@@ -11,6 +11,8 @@ commitsay
 
 ## Example: 
 $ commitsay
+
+```sh
  ________________________
 (  holy fuck it works    )
 (            -Xunnamius  )
@@ -20,6 +22,8 @@ $ commitsay
             (__)\       )\/\
              U  ||----w |
                 ||     ||
+                
+```                
 
 
 ## Best Use : 
