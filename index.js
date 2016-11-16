@@ -16,7 +16,7 @@ var geeksayModule = function() {
             var stats = fs.statSync(db_location);
             var mtime = new Date(stats.mtime).getTime();
             var currtime = new Date().getTime();
-            if (currtime - mtime > 24 * 60 * 60 * 100 || count === 0) {
+            if (currtime - mtime > 12 * 60 * 60 * 1000 || count === 0) {
                 this.do_api();
             }
             else if (count > 1000) {
