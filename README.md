@@ -14,7 +14,7 @@ $ commitsay
 
 ```sh
  ________________________
-(  holy fuck it works    )
+(  holy f**k it works    )
 (            -Xunnamius  )
  ------------------------
         o   ^__^
