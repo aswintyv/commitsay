@@ -2,7 +2,10 @@ const cheerio = require('cheerio');
 const request = require("request");
 const Datastore = require('nedb')
 const fs = require('fs');
-const db = new Datastore({ filename: 'dataFile', autoload: true });
+const os = require('os');
+const db_location = os.homedir()+'/commitsDataFile';
+const db = new Datastore({ filename: db_location, autoload: true });
+
 const _ = require('lodash');
 const cowsay = require("cowsay");
 
@@ -10,8 +13,7 @@ const cowsay = require("cowsay");
 var geeksayModule = function() {
     this.init = () => {
         db.count({}, (err, count) => {
-
-            var stats = fs.statSync("dataFile");
+            var stats = fs.statSync(db_location);
             var mtime = new Date(stats.mtime).getTime();
             var currtime = new Date().getTime();
             if (currtime - mtime > 24 * 60 * 60 * 100 || count === 0) {
