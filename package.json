@@ -15,6 +15,10 @@
   ],
   "author": "Aswin <aswin@aswinteja.com>",
   "license": "MIT",
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/aswintyv/commitssay.git"
+  },
   "dependencies" : {
     "express"    : "4.14.0",
      "request"   : "2.78.0",
