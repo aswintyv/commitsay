@@ -57,8 +57,7 @@ var geeksayModule = function() {
 
     this.do_api = () => {
         db.count({}, (err, count) =>  {
-            request({ url: 'http://www.commitlogsfromlastnight.com/' }, () =>  {
-                var html = arguments[2];
+            request({ url: 'http://www.commitlogsfromlastnight.com/' }, (a,b,html) =>  {
                 var $ = cheerio.load(html);
                 var logs = $('.post');
                 var docs = [];
